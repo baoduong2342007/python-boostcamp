@@ -1,12 +1,4 @@
-"""W1-1 - Grade summary."""
-
-
 def summary(scores: list[float]) -> dict:
-    """Return min, max, mean and median of the scores.
-
-    Mean and median are rounded to two decimals with Python's round().
-    The input list is not modified: sorted() returns a new list.
-    """
     if not scores:
         raise ValueError("scores must not be empty")
 
