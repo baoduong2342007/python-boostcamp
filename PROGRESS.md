@@ -4,7 +4,7 @@ Only the scaffold has been created; all W1 exercises are pending. Replace Pendin
 
 | Member | Week | Issue | PR | Reviewer | Tests | Hours |
 | --- | --- | --- | --- | --- | --- | --- |
-| Member 1 - Duong (baoduong2342007) | w1 | Pending | Pending | Member 2 - Huy | Pending | Not recorded |
+| Member 1 - Duong (baoduong2342007) | w1 | Pending | Pending | Member 2 - Huy | Direct checks passed; official tests pending | Not recorded |
 | Member 2 - Huy (tqhuy0602) | w1 | Pending | Pending | Member 3 - Quyen | Pending | Not recorded |
 | Member 3 - Quyen (pqquyenn) | w1 | Pending | Pending | Member 4 - Minh | Pending | Not recorded |
 | Member 4 - Minh (luongnhatinh) | w1 | Pending | Pending | Member 5 - Bao | Pending | Not recorded |
