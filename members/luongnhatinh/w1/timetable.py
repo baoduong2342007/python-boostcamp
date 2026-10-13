@@ -1,1 +1,8 @@
-# TODO Member 4: W1-5 - Group the timetable. Not implemented.
+"""W1-5: Group the timetable by day module."""
+def by_day(entries: list[tuple[str, str]]) -> dict[str, list[str]]:
+    result = {}
+    for course, day in entries:
+        result.setdefault(day, []).append(course)
+    for day in result:
+        result[day].sort()
+    return result
