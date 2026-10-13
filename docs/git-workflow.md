@@ -8,7 +8,7 @@
    ```bash
    git switch main
    git pull --ff-only origin main
-   git switch -c codex/huy-w1
+   git switch -c feat/tqhuy0602-w1
    ```
 
 3. Implement each exercise in `members/tqhuy0602/w1/`. Test it, stage only the
@@ -23,8 +23,8 @@
    ```
 
 4. Push the branch and open one personal PR into `main`. Link its issue and
-   request `pqquyenn` as reviewer. Put team setup work on a separate branch and
-   in a separate PR, also reviewed by `pqquyenn`.
+   request `pqquyenn` as reviewer. Put team setup work on branch
+   `chore/t-w1-github-setup` in a separate PR, also reviewed by `pqquyenn`.
 5. Review the assigned member's code and team setup PR. Run the relevant checks,
    inspect examples and edge cases, and leave Question, Suggestion, and Praise.
    For Huy's insertion sort, verify the input is modified and the returned list
