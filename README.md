@@ -45,7 +45,18 @@ Each member's folder contains `w1/`, `w2/`, and `w3/`. Individual exercises belo
 
 Each member works on a separate branch, opens a pull request, and receives a review before merging. Record progress, test results, and issue/PR links in [PROGRESS.md](PROGRESS.md). Disclose AI assistance in [docs/ai-use-log.md](docs/ai-use-log.md).
 
-**Current status:** the scaffold is ready for all five members. The W1 files contain only TODO comments; exercise implementations, tests, and CI have not been added. Run and test instructions will be added when those components are available.
+See the short [Git workflow guide](docs/git-workflow.md) and [GitHub labels/milestones setup](docs/github-setup.md). Issue forms and a PR template are in `.github/`.
+
+**Current status:** the scaffold and instructor Week1 tests are available. Each member completes their own exercises; CI is assigned to TV3. Use `PROGRESS.md` for individual completion and test results.
+
+Run Week1 checks from the repository root in an environment with pytest and Ruff installed. For TV2:
+
+```bash
+python -m pytest -q tests/test_w1.py --member tqhuy0602 --variant 2
+ruff check members/tqhuy0602
+```
+
+Always pass the correct member and variant; tests skipped without `--member` do not count as passing.
 
 ## Course Materials
 

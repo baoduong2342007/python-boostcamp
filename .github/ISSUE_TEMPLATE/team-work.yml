@@ -1,0 +1,35 @@
+name: Team setup task
+description: Track an assigned repository setup task.
+title: "[T-W1] "
+labels: [team-hw, w1]
+body:
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      description: Assigned member's name and GitHub username.
+    validations:
+      required: true
+  - type: input
+    id: reviewer
+    attributes:
+      label: Reviewer
+      description: Use the same assigned reviewer as the owner's individual work.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Tasks and completion criteria
+      description: List only the work assigned to this member.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: Record checks actually performed and link the separate team PR.
+  - type: textarea
+    id: use-ai
+    attributes:
+      label: Use AI
