@@ -43,7 +43,7 @@ Each member's folder contains `w1/`, `w2/`, and `w3/`. Individual exercises belo
 
 ## Workflow
 
-Each member works on a separate branch, opens a pull request, and receives a review before merging. Record progress, test results, and issue/PR links in [PROGRESS.md](PROGRESS.md). Disclose AI assistance in [docs/ai-use-log.md](docs/ai-use-log.md).
+Each member works on a separate branch, opens a pull request, and receives a review before merging. Record progress, test results, and issue/PR links in [PROGRESS.md](PROGRESS.md). Disclose AI assistance in [docs/ai-use-log.md](docs/ai-use-log.md). Step-by-step commands, labels and milestones are in [docs/git-workflow.md](docs/git-workflow.md).
 
 **Current status:** the scaffold is ready for all five members. The W1 files contain only TODO comments; exercise implementations, tests, and CI have not been added. Run and test instructions will be added when those components are available.
 
