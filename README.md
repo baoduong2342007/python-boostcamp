@@ -49,14 +49,61 @@ See the short [Git workflow guide](docs/git-workflow.md) and [GitHub labels/mile
 
 **Current status:** the scaffold and instructor Week1 tests are available. Each member completes their own exercises; CI is assigned to TV3. Use `PROGRESS.md` for individual completion and test results.
 
-Run Week1 checks from the repository root in an environment with pytest and Ruff installed. For TV2:
+### Week 1 Function Interfaces (TV1–TV4)
+
+The Week 1 exercises require implementing the following functions in each member's `w1/` directory:
+
+1. **W1-1: Grade Summary (`grades.py`)**
+   - `summary(scores: list[float]) -> dict[str, float]`
+   - Returns a dictionary with keys: `"min"`, `"max"`, `"mean"`, and `"median"` (rounded to 2 decimal places).
+   - Raises `ValueError` if `scores` is empty.
+
+2. **W1-2: Word Counter (`text_tools.py`)**
+   - `word_count(text: str) -> dict[str, int]`: Counts word occurrences case-insensitively, stripping punctuation (`.,!?;:`).
+   - `top_k(text: str, k: int) -> list[tuple[str, int]]`: Returns top `k` most frequent words sorted by count descending, then word ascending. Returns empty list if `k <= 0` or text has no words.
+
+3. **W1-3: Thesis Eligibility (`rules.py`)**
+   - `can_register_thesis(credits: int, gpa: float) -> bool`: Returns `True` if `credits >= 120` and `gpa >= 2.0`.
+   - `missing(credits: int, gpa: float) -> list[str]`: Returns a list of human-readable requirement shortages (e.g., `"need X more credits"`, `"need GPA at least 2.0"`).
+
+4. **W1-4: C++ to Python Translation (`translate.py`)**
+   - Each member implements their assigned variant and includes a docstring comparing C++ vs. Python differences (memory management, dynamic typing, syntax/idiom):
+     - **TV1 (`baoduong2342007`, Variant 1):** `is_prime(n: int) -> bool`
+     - **TV2 (`tqhuy0602`, Variant 2):** `insertion_sort(arr: list[int]) -> list[int]` (in-place modification, returns the same list)
+     - **TV3 (`pqquyenn`, Variant 3):** `transpose(matrix: list[list[int]]) -> list[list[int]]`
+     - **TV4 (`luongnhatinh`, Variant 4):** `primes_up_to(n: int) -> list[int]` (Sieve of Eratosthenes)
+
+5. **W1-5: Group Timetable (`timetable.py`)**
+   - `by_day(entries: list[tuple[str, str]]) -> dict[str, list[str]]`
+   - Takes a list of `(course_code, weekday)` pairs and returns a dictionary mapping each day to an alphabetically sorted list of courses.
+
+### Verification for Members 1–4 (TV1–TV4)
+
+Run Week 1 checks from the repository root in an environment with `pytest` and `ruff` installed:
 
 ```bash
+# Member 1 - Dương (Variant 1)
+python -m pytest -q tests/test_w1.py --member baoduong2342007 --variant 1
+python -m ruff check members/baoduong2342007
+
+# Member 2 - Huy (Variant 2)
 python -m pytest -q tests/test_w1.py --member tqhuy0602 --variant 2
-ruff check members/tqhuy0602
+python -m ruff check members/tqhuy0602
+
+# Member 3 - Quyền (Variant 3)
+python -m pytest -q tests/test_w1.py --member pqquyenn --variant 3
+python -m ruff check members/pqquyenn
+
+# Member 4 - Minh (Variant 4)
+python -m pytest -q tests/test_w1.py --member luongnhatinh --variant 4
+python -m ruff check members/luongnhatinh
 ```
 
-Always pass the correct member and variant; tests skipped without `--member` do not count as passing.
+Expected result: **5 passed** and clean Ruff checks for each member.
+
+> [!WARNING]
+> **Warning on skipped tests:** Always pass the correct `--member <username>` and `--variant <1-4>` arguments. If `--member` is omitted or invalid, `pytest` will skip individual tests by design in `tests/conftest.py`. Skipped tests do **not** count as passing.
+
 ### Verification for Member 5 (simble2k)
 
 Run Week 1 checks from the repository root in an environment with pytest and Ruff installed:
@@ -65,7 +112,7 @@ Run Week 1 checks from the repository root in an environment with pytest and Ruf
 # Run 4 official instructor tests (deselecting instructor variant 1-4)
 python -m pytest -q tests/test_w1.py -k "not test_w1_4" --member simble2k
 
-# Run 1 extra test for Member 5's unique_preserve_order
+# Run 1 extra test for Member 5's unique_preserve_order (group-written test)
 python -m pytest -q tests/test_w1_extra.py --member simble2k
 
 # Linter and formatting check
@@ -75,6 +122,9 @@ python -m ruff format --check members/simble2k/w1 tests/test_w1_extra.py
 
 Expected result: 4 official passed, 1 deselected; 1 extra test passed (`4 official + 1 extra`).
 
-## Course Materials
+## Course Materials & Tests Source
 
 The exercises follow Chapter 18 of **Git & GitHub for Team Projects**. Instructor materials and reference tests are available in [CSC10014 public materials](https://github.com/CSC10014-at-fit-hcmus/public_materials).
+
+- **Official tests source revision:** commit [`2c6edc79772984f6a6ca0c3664ad0a49c907e80a`](https://github.com/CSC10014-at-fit-hcmus/public_materials/commit/2c6edc79772984f6a6ca0c3664ad0a49c907e80a) ("Tests for python-bootcamp (W1-W3)").
+- **Upstream check:** Upstream commits up to `4c1b2d0` ("Added materials for W02") have been audited; no changes or updates to Week 1 tests have been made by the instructors. The official test files (`tests/conftest.py` and `tests/test_w1.py`) retain their exact original hash.
