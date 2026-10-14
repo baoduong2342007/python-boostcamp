@@ -1,1 +1,19 @@
-# TODO Member 2: W1-1 - Grade summary. Not implemented.
+def summary(scores: list[float]) -> dict:
+    """Return score statistics without changing the input list."""
+    if not scores:
+        raise ValueError("scores must not be empty")
+
+    ordered = sorted(scores)
+    count = len(ordered)
+    middle = count // 2
+    if count % 2:
+        median = ordered[middle]
+    else:
+        median = (ordered[middle - 1] + ordered[middle]) / 2
+
+    return {
+        "min": ordered[0],
+        "max": ordered[-1],
+        "mean": round(sum(scores) / count, 2),
+        "median": round(median, 2),
+    }
