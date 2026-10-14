@@ -4,7 +4,7 @@ Replace Pending with actual results only. Record actual hours, not allocation es
 
 | Member | Week | Issue | PR | Reviewer | Tests | Hours |
 | --- | --- | --- | --- | --- | --- | --- |
-| Member 1 - Duong (baoduong2342007) | w1 | Pending | Pending | Member 2 - Huy | Direct checks passed; official tests pending | Not recorded |
+| Member 1 - Duong (baoduong2342007) | w1 | [#18](https://github.com/baoduong2342007/python-bootcamp/issues/18) | [#17](https://github.com/baoduong2342007/python-bootcamp/pull/17) merged; [#19](https://github.com/baoduong2342007/python-bootcamp/pull/19) pending Huy review | Member 2 - Huy | 5 passed (`--member baoduong2342007 --variant 1`); Ruff clean in follow-up | ~2h (self-reported) |
 | Member 2 - Huy (tqhuy0602) | w1 | [#2](https://github.com/baoduong2342007/python-bootcamp/issues/2) | [#10](https://github.com/baoduong2342007/python-bootcamp/pull/10) | Member 3 - Quyen | 5 passed (`--member tqhuy0602 --variant 2`) | Not recorded |
 | Member 3 - Quyen (pqquyenn) | w1 | Pending | Pending | Member 4 - Minh | Pending | Not recorded |
 | Member 4 - Minh (luongnhatinh) | w1 | Pending | Pending | Member 5 - Bao | Pending | Not recorded |
