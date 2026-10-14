@@ -45,7 +45,25 @@ Each member's folder contains `w1/`, `w2/`, and `w3/`. Individual exercises belo
 
 Each member works on a separate branch, opens a pull request, and receives a review before merging. Record progress, test results, and issue/PR links in [PROGRESS.md](PROGRESS.md). Disclose AI assistance in [docs/ai-use-log.md](docs/ai-use-log.md).
 
-**Current status:** the scaffold is ready for all five members. The W1 files contain only TODO comments; exercise implementations, tests, and CI have not been added. Run and test instructions will be added when those components are available.
+**Current status:** the scaffold and instructor Week 1 tests are available. Each member completes their own exercises. Use [PROGRESS.md](PROGRESS.md) for individual completion and test results.
+
+### Verification for Member 5 (simble2k)
+
+Run Week 1 checks from the repository root in an environment with pytest and Ruff installed:
+
+```bash
+# Run 4 official instructor tests (deselecting instructor variant 1-4)
+python -m pytest -q tests/test_w1.py -k "not test_w1_4" --member simble2k
+
+# Run 1 extra test for Member 5's unique_preserve_order
+python -m pytest -q tests/test_w1_extra.py --member simble2k
+
+# Linter and formatting check
+python -m ruff check members/simble2k/w1 tests/test_w1_extra.py
+python -m ruff format --check members/simble2k/w1 tests/test_w1_extra.py
+```
+
+Expected result: 4 official passed, 1 deselected; 1 extra test passed (`4 official + 1 extra`).
 
 ## Course Materials
 
