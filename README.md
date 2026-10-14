@@ -68,7 +68,7 @@ The Week 1 exercises require implementing the following functions in each member
 
 4. **W1-4: C++ to Python Translation (`translate.py`)**
    - Each member implements their assigned variant and includes a docstring comparing C++ vs. Python differences (memory management, dynamic typing, syntax/idiom):
-     - **TV1 (`baoduong2342007`, Variant 1):** `is_prime(n: int) -> bool`
+     - **TV1 (`baoduong2342007`, Variant 1):** `binary_search(a: list[int], key: int) -> int`
      - **TV2 (`tqhuy0602`, Variant 2):** `insertion_sort(arr: list[int]) -> list[int]` (in-place modification, returns the same list)
      - **TV3 (`pqquyenn`, Variant 3):** `transpose(matrix: list[list[int]]) -> list[list[int]]`
      - **TV4 (`luongnhatinh`, Variant 4):** `primes_up_to(n: int) -> list[int]` (Sieve of Eratosthenes)
