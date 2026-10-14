@@ -15,3 +15,10 @@
 - AI assistance was used for Git/GitHub workflow guidance, formatting verification with Ruff, and preparing progress documentation.
 - Verification results: 4 official instructor tests passed, 1 deselected (`test_w1_4_translate`); 1 extra test passed (`tests/test_w1_extra.py`); Ruff check and format clean for `members/simble2k/w1` and `tests/test_w1_extra.py`.
 - Progress tracking: linked to issue #16 and merged PR #15 in `PROGRESS.md`.
+## 2026-10-14 — TV4 / luongnhatinh
+
+- Minh confirms that the original five Week1 exercises were self-written with no AI assistance (as declared in PR #13: None). Recorded actual time: 3.5 hours.
+- In the follow-up review based on `need_to_fix.md`:
+  - AI assistance was used to check and resolve Ruff warnings: refactored dictionary value iteration in `members/luongnhatinh/w1/timetable.py` to eliminate `PLC0206`, formatted the import block in `members/luongnhatinh/w1/translate.py` to resolve `I001`, and fixed escaped Markdown characters in the PR #13 body.
+  - Follow-up verification for TV4: 5 official tests passed with 0 skips (`--member luongnhatinh --variant 4`), Ruff clean (`All checks passed!`). TV4 personal follow-up PR #20 opened and requested Bao (@simble2k) to review.
+  - AI assisted with drafting team documentation for function interfaces (TV1–TV4), logging the official test source revision `2c6edc79772984f6a6ca0c3664ad0a49c907e80a` and upstream audit, recording review notes for Quyên's PR #14, and preparing the team documentation PR.
