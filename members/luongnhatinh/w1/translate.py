@@ -5,7 +5,10 @@ which optimizes storage to 1 bit per element and manages memory statically.
 In Python, we allocate a dynamic list `[True] * (n + 1)` where each boolean is a full object,
 and we can collect results dynamically using list comprehension without manual sizing.
 """
+
 import math
+
+
 def primes_up_to(k) :
     ans=[]
     if(k<2) : return ans
