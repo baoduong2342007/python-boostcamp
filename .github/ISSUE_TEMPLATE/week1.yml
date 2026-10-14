@@ -1,0 +1,44 @@
+name: Week1 individual exercises
+description: Track one member's five Week1 exercises and review.
+title: "[W1] "
+labels: [python-hw, w1]
+body:
+  - type: input
+    id: member
+    attributes:
+      label: Member
+      description: Full name, student ID, and GitHub username.
+    validations:
+      required: true
+  - type: input
+    id: reviewer
+    attributes:
+      label: Reviewer
+      description: Assigned reviewer from the team allocation.
+    validations:
+      required: true
+  - type: input
+    id: variant
+    attributes:
+      label: W1-4 variant
+      description: State the algorithm assigned to this member.
+    validations:
+      required: true
+  - type: checkboxes
+    id: tasks
+    attributes:
+      label: Exercises
+      options:
+        - label: W1-1 grade summary
+        - label: W1-2 word counts and top-k
+        - label: W1-3 thesis eligibility
+        - label: W1-4 assigned algorithm and C++/Python docstring
+        - label: W1-5 timetable grouping
+        - label: Tests pass with the correct member and variant; Ruff passes
+        - label: At least five meaningful commits, one per exercise
+        - label: Personal PR linked, reviewed, and approved
+        - label: Own progress row updated with actual results
+  - type: textarea
+    id: use-ai
+    attributes:
+      label: Use AI
