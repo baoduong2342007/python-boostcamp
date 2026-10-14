@@ -57,6 +57,23 @@ ruff check members/tqhuy0602
 ```
 
 Always pass the correct member and variant; tests skipped without `--member` do not count as passing.
+### Verification for Member 5 (simble2k)
+
+Run Week 1 checks from the repository root in an environment with pytest and Ruff installed:
+
+```bash
+# Run 4 official instructor tests (deselecting instructor variant 1-4)
+python -m pytest -q tests/test_w1.py -k "not test_w1_4" --member simble2k
+
+# Run 1 extra test for Member 5's unique_preserve_order
+python -m pytest -q tests/test_w1_extra.py --member simble2k
+
+# Linter and formatting check
+python -m ruff check members/simble2k/w1 tests/test_w1_extra.py
+python -m ruff format --check members/simble2k/w1 tests/test_w1_extra.py
+```
+
+Expected result: 4 official passed, 1 deselected; 1 extra test passed (`4 official + 1 extra`).
 
 ## Course Materials
 
