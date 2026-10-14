@@ -7,7 +7,7 @@ Replace Pending with actual results only. Record actual hours, not allocation es
 | Member 1 - Duong (baoduong2342007) | w1 | [#18](https://github.com/baoduong2342007/python-bootcamp/issues/18) | [#17](https://github.com/baoduong2342007/python-bootcamp/pull/17) merged; [#19](https://github.com/baoduong2342007/python-bootcamp/pull/19) pending Huy review | Member 2 - Huy | 5 passed (`--member baoduong2342007 --variant 1`); Ruff clean in follow-up | ~2h (self-reported) |
 | Member 2 - Huy (tqhuy0602) | w1 | [#2](https://github.com/baoduong2342007/python-bootcamp/issues/2) | [#10](https://github.com/baoduong2342007/python-bootcamp/pull/10) | Member 3 - Quyen | 5 passed (`--member tqhuy0602 --variant 2`) | Not recorded |
 | Member 3 - Quyen (pqquyenn) | w1 | Pending | Pending | Member 4 - Minh | Pending | Not recorded |
-| Member 4 - Minh (luongnhatinh) | w1 | [#12](https://github.com/baoduong2342007/python-bootcamp/issues/12) | [#13](https://github.com/baoduong2342007/python-bootcamp/pull/13) merged; [#20](https://github.com/baoduong2342007/python-bootcamp/pull/20) pending Bao review | Member 5 - Bao | 5 passed (`--member luongnhatinh --variant 4`); Ruff clean in follow-up | 3.5h (actual) |
-| Member 5 - Bao (simble2k) | w1 | Pending | Pending | Member 1 - Duong | 4 official + 1 extra | 2h |
+| Member 4 - Minh (luongnhatinh) | w1 | Pending | Pending | Member 5 - Bao | Pending | Not recorded |
+| Member 5 - Bao (simble2k) | w1 | [#16](https://github.com/baoduong2342007/python-bootcamp/issues/16) | [#15](https://github.com/baoduong2342007/python-bootcamp/pull/15) | Member 1 - Duong | 4 official + 1 extra | 2h |
 
 Once passing, Member 5 records `4 official + 1 extra`. Do not describe the additional test as an instructor test.
