@@ -13,7 +13,7 @@ PR gốc: [#10](https://github.com/baoduong2342007/python-bootcamp/pull/10)
 và [#11](https://github.com/baoduong2342007/python-bootcamp/pull/11).
 
 Issue bổ sung: [#24](https://github.com/baoduong2342007/python-bootcamp/issues/24).
-PR bổ sung: chờ liên kết.
+PR bổ sung: [#25](https://github.com/baoduong2342007/python-bootcamp/pull/25), đã yêu cầu Quyền (`pqquyenn`) review.
 
 ## Kiểm tra Huy và workflow TV5
 
@@ -103,5 +103,5 @@ tests/test_w1.py: 8ceb5cdf18a85ae066ef5f9fb0bc1249e610a4456e8f925982b73075bb60c6
 
 Không sửa code bài cá nhân, không thay tests giảng viên, không sửa hàng tiến độ
 của thành viên khác. Kiểm tra local không xác nhận CI Ubuntu/Python 3.12.
-PR bổ sung chờ Quyền review trước khi merge; CI, deadline, tag và nộp bài thuộc
+PR #25 chờ Quyền review trước khi merge; CI, deadline, tag và nộp bài thuộc
 các thành viên được phân công trong kế hoạch.
