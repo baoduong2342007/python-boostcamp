@@ -23,3 +23,10 @@ ruff check members/tqhuy0602
 ```
 
 ## Use AI
+
+Huy xác nhận ngày 15/10/2026: code năm bài Week1 tự làm; các thao tác còn lại
+có AI hỗ trợ. Thời gian Week1 trước lượt bổ sung này: 2 giờ thực tế.
+
+Codex hỗ trợ lượt bổ sung hiện tại: review, chạy kiểm tra, sửa tài liệu,
+cập nhật khai báo AI và thao tác Git/GitHub. Xem [nhật ký AI](../../docs/ai-use-log.md)
+và [bằng chứng Week1](week1-followup.md).

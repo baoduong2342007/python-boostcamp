@@ -1,5 +1,26 @@
 # AI use log
 
+## 2026-10-15 — TV2 / tqhuy0602
+
+- Trần Quốc Huy confirms that the five original Week1 exercise implementations
+  were self-written; AI assisted the other operations in PR #10/#11. No
+  AI-generated exercise code is declared retained by Huy. Actual Week1 time
+  before this follow-up: 2 hours, confirmed by Huy in this session.
+- Codex assisted this follow-up by inspecting PR #17/#19 at their exact heads,
+  running official tests, Ruff and edge checks, drafting supplemental reviews,
+  adding the reviewer table and TV5 workflow, and preparing Git/GitHub updates.
+  No individual exercise Python code or instructor tests changed in this PR.
+- Verification on main `07b39013b62145d4e035fe8e964c6637aa65c9be`: Huy 5 official
+  tests passed, no skips; Ruff clean; 1,093 insertion-sort cases passed with
+  in-place mutation and identical returned object. TV5: 4 official passed,
+  1 deselected; 1 group extra passed; Ruff clean. Local Python version: 3.14.0.
+- Dương's original PR #17: 5 official passed; Ruff reported PLC0206. Follow-up
+  PR #19: 5 official passed; Ruff clean. Both PRs were already merged when
+  reviewed; these are supplemental reviews, not approvals before merge.
+- Commands, tested revisions, review links and follow-up links are recorded
+  in [Huy's evidence](../members/tqhuy0602/week1-followup.md). This local
+  verification does not establish Ubuntu/Python 3.12 CI success.
+
 ## 2026-10-14 — TV1 / baoduong2342007
 
 - Dương confirms that the original five Week1 exercises were self-written and AI assistance was used for GitHub operations. Reported time: approximately 2 hours.
