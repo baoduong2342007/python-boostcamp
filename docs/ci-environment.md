@@ -43,9 +43,19 @@ python -m ruff check .
 ```
 > **Yêu cầu:** Kết quả phải hiển thị `All checks passed!` không có warning hoặc error nào.
 
+### 2.2 Kiểm tra bổ sung ranh giới từ W1-2
+
+Đề bài kiểm thử chính thức không có ca dấu câu nằm giữa hai từ. Quy ước bổ sung của nhóm là dấu câu `.,!?;:` phân tách từ; lệnh sau kiểm tra dấu câu, chữ số và chữ Unicode cho TV1, TV2, TV3 và TV5:
+
+```bash
+python -m pytest -q tests/test_w1_tokenization.py
+```
+
+Kết quả mong đợi: `4 passed`. Bài W1-2 của TV4 chưa được đưa vào bài kiểm tra bổ sung này.
+
 ---
 
-### 2.2 Chạy bộ Unit Tests của Giảng viên (`pytest`)
+### 2.3 Chạy bộ Unit Tests của Giảng viên (`pytest`)
 
 Mỗi bài tập cá nhân được cấu hình động thông qua fixture `load`, tham số `--member` (thư mục cá nhân) và `--variant` (mã số biến thể bài W1-4 từ 1 đến 4).
 
@@ -90,7 +100,7 @@ Mỗi bài tập cá nhân được cấu hình động thông qua fixture `load
 
 ## 3. Kiến trúc CI Workflow trên GitHub Actions (`.github/workflows/ci.yml`)
 
-Workflow CI được thiết kế với môi trường **Ubuntu (`ubuntu-latest`)** và **Python 3.12**, bao gồm 3 jobs độc lập:
+Workflow CI được thiết kế với môi trường **Ubuntu (`ubuntu-latest`)** và **Python 3.12**, bao gồm 4 jobs độc lập:
 
 ```mermaid
 flowchart TD
@@ -98,6 +108,7 @@ flowchart TD
     Condition -->|Pull Request| JobPR[Job test-pr: Kiểm tra thành viên thay đổi]
     Condition -->|Push vào main| JobMain[Job test-main: Chạy Matrix cả 5 thành viên]
     Trigger --> JobLint[Job lint: Chạy ruff check .]
+    Trigger --> JobTokenization[Job test-tokenization: Kiểm tra dấu câu cho TV1, TV2, TV3, TV5]
 ```
 
 ### 3.1 Job `lint` (Ruff Code Style Check)
@@ -116,6 +127,10 @@ Chạy độc lập trên mọi sự kiện `push` và `pull_request`, đảm b�
   - `luongnhatinh` (variant 4)
   - `simble2k` (xử lý riêng 4 bài chính thức + 1 bài test nhóm)
 * Tất cả các jobs trong ma trận phải có trạng thái **xanh (Success)** trước khi nhóm gắn annotated tag `py-w1-done` để nộp bài.
+
+### 3.4 Job `test-tokenization` (Kiểm tra bổ sung W1-2)
+
+Chạy test nhóm `tests/test_w1_tokenization.py` trên mọi PR và push lên `main`. Test xác nhận dấu câu được coi là ranh giới từ, đồng thời giữ chữ số và chữ Unicode. Bài W1-2 của TV4 chưa nằm trong danh sách này.
 
 ---
 

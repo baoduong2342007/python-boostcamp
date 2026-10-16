@@ -1,5 +1,17 @@
 # AI use log
 
+## 2026-10-16 — TV1–TV3 and TV5 follow-up changes
+
+- At Dương's request, Codex assisted with the Week1 follow-up on branch
+  `codex/week1-followup-excluding-minh`. It updated W1-2 tokenization for Huy,
+  Quyền, and Bảo so the specified punctuation separates words, and clarified
+  the C++/Python comparison docstrings for Dương's binary search and Bảo's
+  order-preserving duplicate removal.
+- Minh's individual exercise files and the instructor tests were not changed.
+- These are AI-assisted changes retained in the working branch; the student
+  authors should review and understand them before submission. No additional
+  student work hours are inferred or recorded here.
+
 ## 2026-10-15 — TV3 / pqquyenn
 
 - Phan Quỳnh Quyền xác nhận 5 bài tập cá nhân Week1 ban đầu được thực hiện

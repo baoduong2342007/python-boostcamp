@@ -2,9 +2,9 @@
 
 
 def _clean_and_tokenize(text: str) -> list[str]:
-    """Remove standard punctuation and split lowercase text into words."""
+    """Treat standard punctuation as separators between lowercase words."""
     punctuation = ".,!?;:"
-    cleaned = "".join(ch for ch in text if ch not in punctuation)
+    cleaned = "".join(" " if ch in punctuation else ch for ch in text)
     return cleaned.lower().split()
 
 

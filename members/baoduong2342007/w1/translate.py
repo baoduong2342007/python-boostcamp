@@ -1,5 +1,9 @@
 def binary_search(a : list[int] , key : int) -> int :
-    """Python lists use zero-based indexing and need no declared array size."""
+    """Search a sorted list using Python's dynamic list instead of a sized C++ array.
+
+    Both languages use zero-based indexing, but Python lists grow dynamically and
+    do not require a separately declared array length.
+    """
     l = 0
     r = len(a) - 1
     while (l <= r) :

@@ -1,6 +1,7 @@
 def word_count(text: str) -> dict[str, int]:
-    """Count lowercase words after removing the specified punctuation."""
-    cleaned = text.lower().translate(str.maketrans("", "", ".,!?;:"))
+    """Count lowercase words, treating the specified punctuation as separators."""
+    punctuation = ".,!?;:"
+    cleaned = text.lower().translate(str.maketrans(punctuation, " " * len(punctuation)))
     counts = {}
     for word in cleaned.split():
         counts[word] = counts.get(word, 0) + 1

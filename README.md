@@ -47,7 +47,7 @@ Each member works on a separate branch, opens a pull request, and receives a rev
 
 See the short [Git workflow guide](docs/git-workflow.md) and [GitHub labels/milestones setup](docs/github-setup.md). Issue forms and a PR template are in `.github/`.
 
-**Current status:** the scaffold and instructor Week1 tests are available. Each member completes their own exercises; CI is assigned to TV3. Use `PROGRESS.md` for individual completion and test results.
+**Current status:** Week1 exercises and CI are in the repository. GitHub Actions runs the official tests for all five members on `main`; follow-up fixes and review evidence are tracked in `PROGRESS.md`.
 
 ### Week 1 Function Interfaces (TV1–TV4)
 
@@ -59,8 +59,10 @@ The Week 1 exercises require implementing the following functions in each member
    - Raises `ValueError` if `scores` is empty.
 
 2. **W1-2: Word Counter (`text_tools.py`)**
-   - `word_count(text: str) -> dict[str, int]`: Counts word occurrences case-insensitively, stripping punctuation (`.,!?;:`).
+   - `word_count(text: str) -> dict[str, int]`: Counts word occurrences case-insensitively, treating punctuation (`.,!?;:`) as word separators. For example, `"hello,world"` contains `hello` and `world`.
    - `top_k(text: str, k: int) -> list[tuple[str, int]]`: Returns top `k` most frequent words sorted by count descending, then word ascending. Returns empty list if `k <= 0` or text has no words.
+
+The instructor test files remain unchanged. The team punctuation regression check is separate: `python -m pytest -q tests/test_w1_tokenization.py`.
 
 3. **W1-3: Thesis Eligibility (`rules.py`)**
    - `can_register_thesis(credits: int, gpa: float) -> bool`: Returns `True` if `credits >= 120` and `gpa >= 2.0`.
