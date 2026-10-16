@@ -5,7 +5,6 @@ individually assigned implementation is intentionally left to its author.
 """
 
 import importlib
-
 import pytest
 
 
