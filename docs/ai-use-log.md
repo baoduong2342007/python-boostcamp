@@ -1,16 +1,23 @@
 # AI use log
 
-## 2026-10-16 — TV1–TV3 and TV5 follow-up changes
+## 2026-10-16 — Week1 remaining fixes (TV1–TV3 and TV5)
 
-- At Dương's request, Codex assisted with the Week1 follow-up on branch
-  `codex/week1-followup-excluding-minh`. It updated W1-2 tokenization for Huy,
-  Quyền, and Bảo so the specified punctuation separates words, and clarified
-  the C++/Python comparison docstrings for Dương's binary search and Bảo's
-  order-preserving duplicate removal.
+- At Dương's request, Codex reviewed the Week1 plan and tests, then updated
+  W1-2 tokenization for Dương, Huy, Quyền, and Bảo so `.,!?;:` separate words
+  while digits and Unicode letters are preserved. For example,
+  `hello,world` becomes `hello` and `world`. Codex added the group regression
+  test and CI job, clarified the C++/Python comparison docstrings for Dương
+  and Bảo, and updated the related README, progress, and CI documentation.
+- Dương also asked Codex for Git workflow help. Codex created and pushed the
+  follow-up branch, and is renaming it to `fix/week1-remaining-issues` while
+  removing the old `codex/week1-followup-excluding-minh` branch name.
 - Minh's individual exercise files and the instructor tests were not changed.
-- These are AI-assisted changes retained in the working branch; the student
-  authors should review and understand them before submission. No additional
-  student work hours are inferred or recorded here.
+- These code, test, documentation, and Git changes were AI-assisted and should
+  be reviewed and understood by the student authors before submission. No
+  additional student work hours are inferred or recorded here. Local pytest
+  passed for TV1–TV3 (5 official tests each), TV5 (4 official plus 1 extra),
+  and the group tokenization test (4 cases). Ruff was not run; the follow-up
+  branch has not received a GitHub Actions run because no PR is open yet.
 
 ## 2026-10-15 — TV3 / pqquyenn
 
