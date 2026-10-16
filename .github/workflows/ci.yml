@@ -1,0 +1,131 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Ruff Code Style Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Ruff
+        run: pip install ruff
+
+      - name: Run Ruff check
+        run: ruff check .
+
+  test-pr:
+    name: Test Changed Member (PR)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pytest
+
+      - name: Run member tests based on changed files
+        run: |
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD)
+          echo "Changed files in PR:"
+          echo "$CHANGED_FILES"
+
+          RUN_ALL=false
+          if echo "$CHANGED_FILES" | grep -qE '^tests/|^\.github/workflows/'; then
+            RUN_ALL=true
+            echo "Core tests or CI changed: testing all 5 members"
+          fi
+
+          # TV1: baoduong2342007 (variant 1)
+          if [ "$RUN_ALL" = true ] || echo "$CHANGED_FILES" | grep -q '^members/baoduong2342007/'; then
+            echo "::group::Testing member baoduong2342007 (variant 1)"
+            pytest -q tests/test_w1.py --member baoduong2342007 --variant 1
+            echo "::endgroup::"
+          fi
+
+          # TV2: tqhuy0602 (variant 2)
+          if [ "$RUN_ALL" = true ] || echo "$CHANGED_FILES" | grep -q '^members/tqhuy0602/'; then
+            echo "::group::Testing member tqhuy0602 (variant 2)"
+            pytest -q tests/test_w1.py --member tqhuy0602 --variant 2
+            echo "::endgroup::"
+          fi
+
+          # TV3: pqquyenn (variant 3)
+          if [ "$RUN_ALL" = true ] || echo "$CHANGED_FILES" | grep -q '^members/pqquyenn/'; then
+            echo "::group::Testing member pqquyenn (variant 3)"
+            pytest -q tests/test_w1.py --member pqquyenn --variant 3
+            echo "::endgroup::"
+          fi
+
+          # TV4: luongnhatinh (variant 4)
+          if [ "$RUN_ALL" = true ] || echo "$CHANGED_FILES" | grep -q '^members/luongnhatinh/'; then
+            echo "::group::Testing member luongnhatinh (variant 4)"
+            pytest -q tests/test_w1.py --member luongnhatinh --variant 4
+            echo "::endgroup::"
+          fi
+
+          # TV5: simble2k (4 official + 1 extra)
+          if [ "$RUN_ALL" = true ] || echo "$CHANGED_FILES" | grep -q '^members/simble2k/'; then
+            echo "::group::Testing member simble2k (4 official + 1 extra)"
+            pytest -q tests/test_w1.py --member simble2k -k "not test_w1_4"
+            pytest -q tests/test_w1_extra.py --member simble2k
+            echo "::endgroup::"
+          fi
+
+  test-main:
+    name: Test Member (${{ matrix.member }}) on Main
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - member: baoduong2342007
+            variant: 1
+          - member: tqhuy0602
+            variant: 2
+          - member: pqquyenn
+            variant: 3
+          - member: luongnhatinh
+            variant: 4
+          - member: simble2k
+            variant: 5
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pytest
+
+      - name: Run Pytest
+        run: |
+          if [ "${{ matrix.member }}" = "simble2k" ]; then
+            pytest -q tests/test_w1.py --member ${{ matrix.member }} -k "not test_w1_4"
+            pytest -q tests/test_w1_extra.py --member ${{ matrix.member }}
+          else
+            pytest -q tests/test_w1.py --member ${{ matrix.member }} --variant ${{ matrix.variant }}
+          fi

@@ -1,5 +1,20 @@
 # AI use log
 
+## 2026-10-15 — TV3 / pqquyenn
+
+- Phan Quỳnh Quyền xác nhận 5 bài tập cá nhân Week1 ban đầu được thực hiện
+  độc lập và đã merge vào main qua PR #14 tại commit b400900. Thời gian thực
+  tế tự làm bài: khoảng 2 giờ.
+- AI (Google Antigravity) hỗ trợ phiên bổ sung theo tài liệu `need_to_fix.md`:
+  triển khai workflow CI GitHub Actions (`.github/workflows/ci.yml`), viết
+  tài liệu hướng dẫn môi trường và CI (`docs/ci-environment.md`), chạy kiểm
+  thử xác thực 1.093 trường hợp in-place cho bài của Huy (TV2), và chuẩn bị
+  bằng chứng theo dõi tại `members/pqquyenn/week1-followup.md`.
+- Kết quả kiểm thử trên main `f6512d0`:
+  - Quyền (TV3): 5 official tests passed, 0 skipped (`--member pqquyenn --variant 3`); Ruff clean.
+  - Ma trận toàn nhóm: TV1 5 passed, TV2 5 passed, TV4 5 passed, TV5 4 passed (1 deselected) + 1 extra passed. Toàn bộ repository Ruff clean (`All checks passed!`).
+- Đã soạn thảo nhận xét review bổ sung (Question, Suggestion, Praise) cho các PR #10, #11 và #25 của Huy.
+
 ## 2026-10-15 — TV2 / tqhuy0602
 
 - Trần Quốc Huy confirms that the five original Week1 exercise implementations
