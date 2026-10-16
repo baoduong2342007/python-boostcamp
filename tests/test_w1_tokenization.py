@@ -5,8 +5,8 @@ individually assigned implementation is intentionally left to its author.
 """
 
 import importlib
-import pytest
 
+import pytest
 
 MEMBERS = (
     "baoduong2342007",
