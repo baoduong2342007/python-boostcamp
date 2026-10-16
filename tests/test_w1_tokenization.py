@@ -1,7 +1,6 @@
 """Team regression tests for punctuation-based word boundaries.
 
-These supplement the instructor tests without modifying them. TV4's
-individually assigned implementation is intentionally left to its author.
+These supplement the instructor tests without modifying them.
 """
 
 import importlib
@@ -12,6 +11,7 @@ MEMBERS = (
     "baoduong2342007",
     "tqhuy0602",
     "pqquyenn",
+    "luongnhatinh",
     "simble2k",
 )
 
