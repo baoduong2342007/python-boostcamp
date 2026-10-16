@@ -4,8 +4,8 @@ PUNCTUATION = ".,!?;:"
 
 
 def word_count(text: str) -> dict[str, int]:
-    """Count occurrences of each word in text, case-insensitive and ignoring punctuation .,!?;:."""
-    cleaned = text.lower().translate(str.maketrans("", "", PUNCTUATION))
+    """Count words case-insensitively, treating punctuation as separators."""
+    cleaned = text.lower().translate(str.maketrans(PUNCTUATION, " " * len(PUNCTUATION)))
     counts: dict[str, int] = {}
     for word in cleaned.split():
         counts[word] = counts.get(word, 0) + 1

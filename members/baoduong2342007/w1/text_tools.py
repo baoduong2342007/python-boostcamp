@@ -1,4 +1,5 @@
 def word_count(text: str) -> dict[str, int]:
+    """Count lowercase words, using the specified punctuation as separators."""
     text = text.lower()
 
     punctuations = ".,!?;:"

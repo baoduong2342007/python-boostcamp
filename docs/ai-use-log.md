@@ -1,5 +1,17 @@
 # AI use log
 
+## 2026-10-16 — Week1 follow-up
+
+- Dương wrote the original five exercises and asked Codex for Git help. He
+  specified that punctuation splits words (`hello,world` -> `hello`, `world`).
+- Codex renamed/pushed the branch and assisted with follow-up code, tests, CI,
+  and docs: tokenization for Huy, Quyền, and Bảo; a group regression test; and
+  docstring/documentation updates. Dương's tokenizer already met the rule.
+  Minh's assignment and the instructor tests were untouched.
+- Local pytest passed: TV1–TV3, 5 official tests each; TV5, 4 official + 1
+  extra; group test, 4 cases. Ruff was not run. Original authorship and these
+  AI-assisted follow-up changes are recorded separately; no hours inferred.
+
 ## 2026-10-15 — TV3 / pqquyenn
 
 - Phan Quỳnh Quyền xác nhận 5 bài tập cá nhân Week1 ban đầu được thực hiện
