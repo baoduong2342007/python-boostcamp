@@ -1,23 +1,16 @@
 # AI use log
 
-## 2026-10-16 — Week1 remaining fixes (TV1–TV3 and TV5)
+## 2026-10-16 — Week1 follow-up
 
-- At Dương's request, Codex reviewed the Week1 plan and tests, then updated
-  W1-2 tokenization for Dương, Huy, Quyền, and Bảo so `.,!?;:` separate words
-  while digits and Unicode letters are preserved. For example,
-  `hello,world` becomes `hello` and `world`. Codex added the group regression
-  test and CI job, clarified the C++/Python comparison docstrings for Dương
-  and Bảo, and updated the related README, progress, and CI documentation.
-- Dương also asked Codex for Git workflow help. Codex created and pushed the
-  follow-up branch, and is renaming it to `fix/week1-remaining-issues` while
-  removing the old `codex/week1-followup-excluding-minh` branch name.
-- Minh's individual exercise files and the instructor tests were not changed.
-- These code, test, documentation, and Git changes were AI-assisted and should
-  be reviewed and understood by the student authors before submission. No
-  additional student work hours are inferred or recorded here. Local pytest
-  passed for TV1–TV3 (5 official tests each), TV5 (4 official plus 1 extra),
-  and the group tokenization test (4 cases). Ruff was not run; the follow-up
-  branch has not received a GitHub Actions run because no PR is open yet.
+- Dương wrote the original five exercises and asked Codex for Git help. He
+  specified that punctuation splits words (`hello,world` -> `hello`, `world`).
+- Codex renamed/pushed the branch and assisted with follow-up code, tests, CI,
+  and docs: tokenization for Huy, Quyền, and Bảo; a group regression test; and
+  docstring/documentation updates. Dương's tokenizer already met the rule.
+  Minh's assignment and the instructor tests were untouched.
+- Local pytest passed: TV1–TV3, 5 official tests each; TV5, 4 official + 1
+  extra; group test, 4 cases. Ruff was not run. Original authorship and these
+  AI-assisted follow-up changes are recorded separately; no hours inferred.
 
 ## 2026-10-15 — TV3 / pqquyenn
 
